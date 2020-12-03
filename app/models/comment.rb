@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :userId
-  belongs_to :championId
+  belongs_to :user
+  belongs_to :champion
 end

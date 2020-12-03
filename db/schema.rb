@@ -22,20 +22,19 @@ ActiveRecord::Schema.define(version: 2020_12_01_212050) do
 
   create_table "comments", force: :cascade do |t|
     t.string "comment"
-    t.integer "userId_id", null: false
-    t.integer "championId_id", null: false
+    t.integer "user_id"
+    t.integer "champion_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["championId_id"], name: "index_comments_on_championId_id"
-    t.index ["userId_id"], name: "index_comments_on_userId_id"
+    t.index ["champion_id"], name: "index_comments_on_champion_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name"
+    t.string "password"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "comments", "championIds"
-  add_foreign_key "comments", "userIds"
 end
