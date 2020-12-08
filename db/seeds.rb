@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Champion.destroy_all
+Comment.destroy_all
+
+
+
 user_1 = User.create(user_name: 'Joe')
 user_2 = User.create(user_name: 'Bryan')
 
@@ -31,8 +37,8 @@ champion_18 = Champion.create(name: 'Lucian', image: 'https://ddragon.leagueofle
 champion_19 = Champion.create(name: 'Sylas', image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg', bio: 'Raised in one of Demacias lesser quarters, Sylas of Dregbourne has come to symbolize the darker side of the Great City. As a boy, his ability to root out hidden sorcery caught the attention of the notorious mageseekers, who eventually imprisoned him for turning those same powers against them. Having now broken free, Sylas lives as a hardened revolutionary, using the magic of those around him to destroy the kingdom he once served… and his band of outcast mage followers seems to grow by the day.')
 champion_20 = Champion.create(name: 'Akali', image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_32.jpg', bio: 'Abandoning the Kinkou Order and her title of the Fist of Shadow, Akali now strikes alone, ready to be the deadly weapon her people need. Though she holds onto all she learned from her master Shen, she has pledged to defend Ionia from its enemies, one kill at a time. Akali may strike in silence, but her message will be heard loud and clear: fear the assassin with no master.')
 
-comment_1 = Comment.create(comment: 'test comments for the db.', user: user_1,  champion: champion_1)
-comment_2 = Comment.create(comment: 'test comments for the db.', user: user_1,  champion: champion_2)
+comment_1 = Comment.create(comment: 'test comments for the db.', user_id: 1,  champion_id: 1)
+comment_2 = Comment.create(comment: 'test comments for the db.', user_id: 2,  champion_id: 2)
 # comment_4 = Comment.create(comment: 'test comments for the db.', userId: user_1,  championId: champion_3)
 # comment_3 = Comment.create(comment: 'test comments for the db.', userId: user_1,  championId: champion_4)
 # comment_5 = Comment.create(comment: 'test comments for the db.', userId: user_1,  championId: champion_5)

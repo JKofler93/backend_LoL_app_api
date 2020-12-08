@@ -6,15 +6,16 @@ class CommentsController < ApplicationController
     end 
 
     def create
-        user = User.create(comment_params)
+        comment = Comment.create(comment_params)
+        render json: comment
     end 
 
     def destroy
-        user = User.find(params[:id])
-        user.destroy
-    end 
+        comment = Comment.find(params[:id])
+        comment.destroy
+    end  
 
     def comment_params
-        params.require(:comment).permit(:comment, :user_id, :champion_id)
+        params.require(:comments).permit(:comment, :user_id, :champion_id)
     end 
 end
